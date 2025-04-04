@@ -9,8 +9,6 @@ from django.core.validators import RegexValidator
 
 
 
-
-
 #Lista todos os médicos cadastrados
 @api_view(['GET'])
 def listar_medicos(request):
@@ -35,3 +33,10 @@ def detalhes_consulta(request):
     medico = get_object_or_404(Medico)
     serializer = MedicoSerializer(medico)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
+
+
+
+

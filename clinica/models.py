@@ -27,10 +27,9 @@ class Medico(models.Model):
         ]
     )
     email = models.EmailField(
-        unique=True,
         validators=[EmailValidator(message="Insira um e-mail válido.")],
         null=True,
-        default='DEFAULT'
+        blank=True
     )
 
     def __str__(self):
