@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 import re
 from django.core.validators import RegexValidator
+from django.contrib.auth import authenticate
 
 
 #Lista todos os servicos disponiveis
@@ -32,10 +33,6 @@ def detalhes_servicos(request):
     servico = get_object_or_404(Servico)
     serializer = ServicoSerializer(servico)
     return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-
-
 
 
 
