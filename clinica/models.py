@@ -21,14 +21,16 @@ class Medico(models.Model):
         unique=True,
         validators=[
             RegexValidator(
-                regex=r'^[A-Z]{2}/\d{5}$',
-                message="CRM deve estar no formato XX/XXXXX, exemplo: SP/12345."
+                regex=r'^\d{2}/\d{5}$',
+                message="CRM deve estar no formato XX/XXXXX, exemplo: 22/12345."
             )
         ]
     )
     email = models.EmailField(
         unique=True,
-        validators=[EmailValidator(message="Insira um e-mail válido.")]
+        validators=[EmailValidator(message="Insira um e-mail válido.")],
+        null=True,
+        default='DEFAULT'
     )
 
     def __str__(self):
