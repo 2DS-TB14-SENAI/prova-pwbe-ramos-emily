@@ -16,7 +16,7 @@ class Medico(models.Model):
     nome = models.CharField(max_length=30, blank=True, null=True)
     especialidade = models.CharField(max_length=3, choices=escolhas)
     crm = models.CharField(max_length=10)
-    email = models.EmailField(max_length=30)
+    email = models.EmailField(max_length=70,blank=True,unique=True)
 
 
 class Consulta(models.Model):
